@@ -1,0 +1,120 @@
+/* Corpo da página */
+body {
+  margin: 0;
+  background: #050b14;
+  font-family: Arial, sans-serif;
+}
+
+/* BOTÃO FLUTUANTE */
+#floatBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background: #00aaff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0 0 20px #00aaff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* PAINEL */
+#panel {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  width: 260px;
+  background: #0a1625;
+  border: 2px solid #00aaff;
+  border-radius: 15px;
+  padding: 15px;
+  color: #fff;
+  box-shadow: 0 0 25px #00aaff55;
+  animation: slideUp 0.4s ease;
+  z-index: 999;
+}
+
+/* Escondido por padrão */
+.hidden {
+  display: none;
+}
+
+/* Animação ao abrir */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Header arrastável */
+#panelHeader {
+  text-align: center;
+  color: #00aaff;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: grab;
+  user-select: none;
+}
+
+/* Opções (toggle) */
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.toggle {
+  width: 40px;
+  height: 20px;
+  background: #333;
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.toggle::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: #aaa;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: 0.3s;
+}
+
+.toggle.active {
+  background: #00aaff;
+}
+
+.toggle.active::after {
+  left: 21px;
+  background: #000;
+}
+
+/* Botão injetar */
+.inject {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px;
+  background: #00aaff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Status */
+#status {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 8px;
+}
